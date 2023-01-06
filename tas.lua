@@ -1,1 +1,167 @@
-local v0=loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))();local v1=v0:MakeWindow({Name="TASploit | UAOT",IntroEnabled=true,IntroText="WELCOME TO TASPLOIT",IntroIcon="nil",HidePremium=false,SaveConfig=false});local v2=v1:MakeTab({Name="Commands",Icon="rbxassetid://4483345998",PremiumOnly=false});v2:AddButton({Name="Infinite Gas",Callback=function()local v7=getrawmetatable(game);local v8=v7.__namecall;setreadonly(v7,false);v7.__namecall=newcclosure(function(v24,...)if (getnamecallmethod()=="FireServer") then if (v24.Name=="GasDepleteEvent") then return;end end return v8(v24,...);end);setreadonly(v7,true);end});v2:AddButton({Name="Infinite Blades",Callback=function()local v10=getrawmetatable(game);local v11=v10.__namecall;setreadonly(v10,false);v10.__namecall=newcclosure(function(v25,...)if (getnamecallmethod()=="FireServer") then if (v25.Name=="BladeDurEvent") then return;end end return v11(v25,...);end);setreadonly(v10,true);end});v2:AddButton({Name="Infinite Health (READ FAQ)",Callback=function()local v13=game.Players.LocalPlayer;local v14=v13.Character;v14.Humanoid.MaxHealth=math.huge;v14.Humanoid.Health=math.huge;v14.Humanoid.Changed:Connect(function(v26)if (v26=="Health") then v14.Humanoid.Health=math.huge;end end);end});v2:AddButton({Name="RESET CHARACTER (READ FAQ)",Callback=function()local v19=game.Players.LocalPlayer;local v20=v19.Character;v20.Humanoid.MaxHealth=0;v20.Humanoid.Health=0;end});local v3=v2:AddSection({Name="Speed Hack"});v2:AddSlider({Name="Modify WalkSpeed",Min=28,Max=150,Default=28,Color=Color3.fromRGB(255,255,255),Increment=1,ValueName=nil,Callback=function(v6)game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=v6;end});local v4=v1:MakeTab({Name="Credits",Icon="rbxassetid://4483345998",PremiumOnly=false});v4:AddLabel("Made with ❤️ by 787Splash");v4:AddLabel("Discord Server - discord.gg/PNQXTsCXEd");v4:AddParagraph("Thank you for using!","This is actually my very first time making an exploit, I appreciate the fact that you are using this script. If you are an experienced developer and want to contact me regarding the script then you can freely do so on my Discord Server. Link is given above");v4:AddParagraph("Donation","A donation helps to motivate! If you feel like motivating me to continue then please DM me on Discord");local v5=v1:MakeTab({Name="FAQ",Icon="rbxassetid://4483345998",PremiumOnly=false});v5:AddParagraph("Why cant I reset my character?","So when you use Infinite Health you will not be able to use Roblox's default reset character button, I was too lazy to make it work");v5:AddParagraph("Why does this script have a Reset Character Button?","Because the default reset button doesn't work and I'm too lazy to fix that instead I made a button for y'all if you want to reset your character for some reason or if you are stuck in a Titan's hand");v0:Init();
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "TASploit | UAOT", IntroEnabled = true, 
+IntroText = "WELCOME TO TASPLOIT",
+IntroIcon = "nil",
+HidePremium = false, SaveConfig = false})
+
+
+local Tab = Window:MakeTab({
+	Name = "Commands",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+Tab:AddButton({
+	Name = "Infinite Gas",
+	Callback = function()
+		
+		local mt = getrawmetatable(game)
+local nc = mt.__namecall
+
+setreadonly(mt, false)
+
+mt.__namecall = newcclosure(function(self, ...)
+    if getnamecallmethod() == "FireServer" then
+        if self.Name == "GasDepleteEvent" then
+            return
+        end
+        
+        
+    end
+    
+    return nc(self, ...)
+end)
+
+setreadonly(mt, true)
+
+
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Infinite Blades",
+	Callback = function()
+		
+		local mt = getrawmetatable(game)
+		local nc = mt.__namecall
+
+			setreadonly(mt, false)
+
+			mt.__namecall = newcclosure(function(self, ...)
+    	if getnamecallmethod() == "FireServer" then
+        
+        	if self.Name == "BladeDurEvent" then
+           	 return
+        	end
+    	end
+    
+    	return nc(self, ...)
+	end)
+
+	setreadonly(mt, true)
+
+
+	end    
+})
+
+
+Tab:AddButton({
+	Name = "Infinite Health (READ FAQ)",
+	Callback = function()
+		local player = game.Players.LocalPlayer
+	local character = player.Character
+
+	-- Set the character's health to an extremely high value
+	character.Humanoid.MaxHealth = math.huge
+	character.Humanoid.Health = math.huge
+
+	-- Disable the character's ability to take damage
+	character.Humanoid.Changed:Connect(function(property)
+	if property == "Health" then
+		character.Humanoid.Health = math.huge
+	end
+end)
+
+
+	end
+})
+
+Tab:AddButton({
+	Name = "RESET CHARACTER (READ FAQ)",
+	Callback = function()
+		local player = game.Players.LocalPlayer
+	local character = player.Character
+
+	-- Set the character's health to an extremely high value
+	character.Humanoid.MaxHealth = 0
+	character.Humanoid.Health = 0
+
+
+	end
+})
+
+
+
+
+
+
+
+
+
+local Section = Tab:AddSection({
+	Name = "Speed Hack"
+})
+
+
+Tab:AddSlider({
+	Name = "Modify WalkSpeed",
+	Min = 28,
+	Max = 150,
+	Default = 28,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = nil,
+	Callback = function(s)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+	
+	end    
+})
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+
+
+Tab:AddLabel("Made with ❤️ by 787Splash")
+
+Tab:AddLabel("Discord Server - discord.gg/PNQXTsCXEd")
+Tab:AddParagraph("Thank you for using!",
+"This is actually my very first time making an exploit, I appreciate the fact that you are using this script. If you are an experienced developer and want to contact me regarding the script then you can freely do so on my Discord Server. Link is given above")
+Tab:AddParagraph("Donation",
+"A donation helps to motivate! If you feel like motivating me to continue then please DM me on Discord")
+
+	
+
+local Tab = Window:MakeTab({
+		Name = "FAQ",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+})
+
+Tab:AddParagraph("Why cant I reset my character?",
+"So when you use Infinite Health you will not be able to use Roblox's default reset character button, I was too lazy to make it work")
+
+Tab:AddParagraph("Why does this script have a Reset Character Button?",
+"Because the default reset button doesn't work and I'm too lazy to fix that instead I made a button for y'all if you want to reset your character for some reason or if you are stuck in a Titan's hand")
+	
+OrionLib:Init()
